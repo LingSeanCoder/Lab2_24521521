@@ -1,12 +1,7 @@
-
----
-
-## 📄 `TASK_DECOMPOSITION.md` — Exercise 1
-
-```markdown
 # Exercise 1 — Mini-React VNode — Task Decomposition (WBS)
 
-In-class sprint deliverable. Zero div-soup, strict typeguard, live DevTools audit.
+In-class sprint. Zero div-soup, strict typeguard verification, live
+DevTools audit.
 
 ---
 
@@ -50,7 +45,7 @@ In-class sprint deliverable. Zero div-soup, strict typeguard, live DevTools audi
 - VNode is a plain object; no methods, no prototype chain.
 - `children` is always an array (never undefined).
 - Text children are always wrapped in `TEXT_ELEMENT` VNodes.
-- Events are attached with `addEventListener`, never inline `onclick=`.
+- Events attach via `addEventListener`, never inline `onclick=`.
 - `innerHTML` is never called.
 
 ---
@@ -72,6 +67,8 @@ In-class sprint deliverable. Zero div-soup, strict typeguard, live DevTools audi
 - Commit `feat(core): implement renderToDOM`
 
 Both appear above at rows 2 and 3.
+
+**Rule:** Never prompt AI with more than one sub-task at a time.
 
 ---
 
