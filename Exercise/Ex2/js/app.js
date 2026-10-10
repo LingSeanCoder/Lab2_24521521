@@ -1,7 +1,7 @@
-// js/app.js
+// --- FILE 3: js/app.js ---
 
 import { useState, renderApp } from './reactive-engine.js';
-import { createElement } from './mini-react/index.js';
+import { createElement } from './render.js';
 
 function TaskApp() {
   const [tasks, setTasks] = useState(['Review PR', 'Verify AST']);
