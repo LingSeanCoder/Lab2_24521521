@@ -1,0 +1,36 @@
+```text
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurrent Audio Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Audio Queue Visualizer</h1>
+        
+        <section class="controls">
+            <label for="url-input">Audio Track URL</label>
+            <input type="url" id="url-input" placeholder="Enter audio track URL..." aria-label="Audio Track URL">
+            <button type="button" id="add-btn">Add to Queue</button>
+            <button type="button" id="abort-btn">Abort Current</button>
+        </section>
+
+        <section class="visualizer-container">
+            <canvas id="visualizer" width="800" height="400" aria-label="Audio Frequency Visualizer"></canvas>
+        </section>
+
+        <section class="queue-container">
+            <h2>Queue</h2>
+            <ul id="queue-list">
+                <!-- Queue items will be injected here via JS -->
+            </ul>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
+```
