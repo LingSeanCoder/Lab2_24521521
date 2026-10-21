@@ -7,36 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main id="app-root">
-        <div role="toolbar" aria-label="Table controls">
-            <input type="search" id="filter-input" placeholder="Filter records..." aria-label="Filter records">
-            <button id="reset-btn">Reset</button>
-        </div>
-
-        <table role="grid" aria-label="Enterprise Data Grid" aria-rowcount="30" aria-colcount="6">
-            <thead role="presentation">
-                <tr role="row">
-                    <th role="columnheader" scope="col">ID</th>
-                    <th role="columnheader" scope="col">Name</th>
-                    <th role="columnheader" scope="col">Email</th>
-                    <th role="columnheader" scope="col">Role</th>
-                    <th role="columnheader" scope="col">Status</th>
-                    <th role="columnheader" scope="col">Last Login</th>
-                </tr>
-            </thead>
-            <tbody role="presentation">
-                <!-- Placeholder row to satisfy <td role="gridcell"> structure before JS mount -->
-                <tr role="row">
-                    <td role="gridcell" tabindex="-1">USR-000</td>
-                    <td role="gridcell" tabindex="-1">Placeholder User</td>
-                    <td role="gridcell" tabindex="-1">placeholder@example.com</td>
-                    <td role="gridcell" tabindex="-1">Viewer</td>
-                    <td role="gridcell" tabindex="-1">Active</td>
-                    <td role="gridcell" tabindex="-1">2026-01-01</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+    <!-- Thẻ main này phải rỗng, JS sẽ tự động render DataGrid vào đây -->
+    <main id="app-root"></main>
 
     <script type="module" src="js/main.js"></script>
 </body>
