@@ -1,0 +1,153 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --surface-color: #1e1e1e;
+  --border-color: #333333;
+  --primary-color: #4a90e2;
+  --primary-hover: #357abd;
+  --status-loading: #f5a623;
+  --status-done: #7ed321;
+  --status-error: #d0021b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Toolbar / Controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#url-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+#url-input:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: transparent;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:disabled {
+  background-color: var(--border-color);
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* Canvas / Visualizer */
+.visualizer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#visualizer {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  background-color: #000000;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* Queue List */
+.queue-container {
+  width: 100%;
+}
+
+.queue-container h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+#queue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#queue-list li {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break: break-all;
+}
+
+#queue-list li:last-child {
+  border-bottom: none;
+}
+
+/* Queue Status Colors */
+.status-loading {
+  color: var(--status-loading);
+  font-weight: bold;
+}
+
+.status-done {
+  color: var(--status-done);
+  font-weight: bold;
+}
+
+.status-error {
+  color: var(--status-error);
+  font-weight: bold;
+}
