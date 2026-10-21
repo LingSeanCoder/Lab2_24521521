@@ -19,6 +19,10 @@ export class AudioVisualizer {
     }
 
     draw() {
+        // Hủy RAF cũ trước khi tạo mới để tránh rò rỉ
+        if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+        }
         this.rafId = requestAnimationFrame(this.draw.bind(this));
         
         this.analyser.getByteFrequencyData(this.dataArray);
@@ -26,16 +30,18 @@ export class AudioVisualizer {
         this.ctx.fillStyle = '#000000';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-        const barWidth = (this.canvas.width / this.bufferLength) * 2.5;
+        // Sửa công thức tính width để không bị tràn Canvas
+        const barWidth = (this.canvas.width / this.bufferLength);
         let x = 0;
 
         for (let i = 0; i < this.bufferLength; i++) {
             const barHeight = (this.dataArray[i] / 255) * this.canvas.height;
 
             this.ctx.fillStyle = `rgb(74, 144, 226)`;
-            this.ctx.fillRect(x, this.canvas.height - barHeight, barWidth, barHeight);
+            // Trừ 1px để tạo khoảng cách giữa các cột
+            this.ctx.fillRect(x, this.canvas.height - barHeight, barWidth - 1, barHeight);
 
-            x += barWidth + 1;
+            x += barWidth;
         }
     }
 
