@@ -1,0 +1,223 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-header-bg: #1e3a5f;
+  --color-header-text: #ffffff;
+  --color-border: #c0c0c0;
+  --color-focus: #005fcc;
+  --color-focus-offset: #ffffff;
+  --color-selected-bg: #e6f0ff;
+  --color-selected-border: #005fcc;
+  --color-button-bg: #1e3a5f;
+  --color-button-text: #ffffff;
+  --color-button-hover-bg: #2a4f7a;
+  --color-disabled-bg: #d0d0d0;
+  --color-disabled-text: #6b6b6b;
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --focus-outline-width: 2px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* Toolbar */
+[role="toolbar"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+[role="toolbar"] input[type="search"] {
+  flex: 1 1 16rem;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+[role="toolbar"] input[type="search"]:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-focus);
+}
+
+button {
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-button-text);
+  background-color: var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--color-button-hover-bg);
+  border-color: var(--color-button-hover-bg);
+}
+
+button:disabled {
+  background-color: var(--color-disabled-bg);
+  border-color: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Table */
+table[role="grid"] {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  /* Do NOT set display: block on table */
+}
+
+table[role="grid"] thead {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+}
+
+table[role="grid"] th {
+  padding: 0;
+  text-align: left;
+  font-weight: 700;
+  color: var(--color-header-text);
+  background-color: var(--color-header-bg);
+  border: 1px solid var(--color-header-bg);
+  white-space: nowrap;
+}
+
+table[role="grid"] th .sort-btn {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  color: var(--color-header-text);
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+table[role="grid"] th .sort-btn:hover {
+  background-color: var(--color-button-hover-bg);
+}
+
+table[role="grid"] th .sort-btn:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-focus);
+  outline-offset: -2px;
+  background-color: var(--color-button-hover-bg);
+}
+
+table[role="grid"] td {
+  padding: 0.55rem 0.75rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+table[role="grid"] tbody tr:nth-child(even) td {
+  background-color: #f5f7fa;
+}
+
+table[role="grid"] tbody tr:hover td {
+  background-color: #eaf1fb;
+}
+
+table[role="grid"] td:focus,
+table[role="grid"] td:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-focus);
+  outline-offset: -2px;
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 2px var(--color-focus);
+}
+
+/* Selected row indicator */
+table[role="grid"] tbody tr[aria-selected="true"] td {
+  background-color: var(--color-selected-bg);
+  border-left: 4px solid var(--color-selected-border);
+}
+
+table[role="grid"] tbody tr[aria-selected="true"] td:first-child {
+  border-left-width: 4px;
+}
+
+table[role="grid"] tbody tr[aria-selected="true"] td:focus-visible {
+  background-color: #dbe8ff;
+}
+
+table[role="grid"] .empty-cell {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-text);
+  background-color: #f5f7fa;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination .page-info {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* High contrast support */
+@media (forced-colors: active) {
+  button,
+  table[role="grid"] td,
+  table[role="grid"] th {
+    border: 1px solid ButtonText;
+  }
+  table[role="grid"] td:focus-visible,
+  button:focus-visible {
+    outline: 2px solid Highlight;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
