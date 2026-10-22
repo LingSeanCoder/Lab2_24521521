@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Sale - High Concurrency</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="flash-sale-container">
+        <header class="sale-header">
+            <h1>11.11 Mega Sale</h1>
+            <p>Ends in: <span id="countdown-timer">00:00:15</span></p>
+        </header>
+
+        <div class="product-card">
+            <h2 class="product-name">iPhone 15 Pro Max</h2>
+            <p class="product-stock">Stock: <span id="stock-display">10</span></p>
+            
+            <button type="button" id="buy-btn" data-id="prod-1">Buy Now</button>
+            
+            <p id="status-msg" aria-live="polite"></p>
+        </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
