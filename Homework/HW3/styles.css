@@ -1,0 +1,141 @@
+:root {
+  --primary-red: #ff2a2a;
+  --dark-red: #b71c1c;
+  --accent-yellow: #ffeb3b;
+  --text-white: #ffffff;
+  --text-dark: #333333;
+  --disabled-gray: #cccccc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4500, var(--primary-red));
+  color: var(--text-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.flash-sale-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.sale-header {
+  margin-bottom: 2rem;
+}
+
+.sale-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sale-header p {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#countdown-timer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-yellow);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.product-card {
+  background-color: var(--dark-red);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-name {
+  font-size: 1.75rem;
+  margin: 0;
+  color: var(--text-white);
+}
+
+.product-stock {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #ffcdd2;
+}
+
+#stock-display {
+  font-weight: bold;
+  color: var(--text-white);
+  font-size: 1.3rem;
+}
+
+#buy-btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  background-color: var(--accent-yellow);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.4);
+  margin-top: 1rem;
+}
+
+#buy-btn:hover:not(:disabled) {
+  background-color: #fff176;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 235, 59, 0.6);
+}
+
+#buy-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+#buy-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  background-color: var(--disabled-gray);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+#status-msg {
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-height: 1.5rem;
+  margin: 0;
+  color: var(--accent-yellow);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
